@@ -14,16 +14,15 @@ function waitFor(button, value) {
   })
 }
 
-async function init() {
+/*async function init() {
   const result1 = await waitFor(button1, 100);
   console.log('Success 1:', result1);
 
   const result2 = await waitFor(button2, 200);
   console.log('Success 2:', result2);
   return result1 + result2;
-}
+}*/
 
-/*
 async function init() {
   try {
     const result1 = await waitFor(button1, 100);
@@ -40,7 +39,7 @@ async function init() {
   }
 
   console.log('After try catch');
-}*/
+}
 
 init()
   .then(data => console.log('Result:', data));

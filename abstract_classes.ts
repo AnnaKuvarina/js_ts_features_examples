@@ -1,15 +1,17 @@
 interface Position2D {
   x: number;
-  y: number;
+  y?: number;
 }
 
 // change to abstract
-class Point2D implements Position2D {
+abstract class Point2D implements Position2D {
   constructor(
     public x: number,
     public y: number,
     ) {
   }
+
+  abstract init(): void
 
   print() {
     console.log(`x: ${this.x}, y: ${this.y}`);
@@ -24,6 +26,10 @@ class Point3D extends Point2D {
   ) {
     super(x, y);
   }
+
+  init() {
+    console.log('vvb')
+  }
 }
 
 class PointLocation extends Point2D {
@@ -32,6 +38,9 @@ class PointLocation extends Point2D {
     ...args: [number, number]
 ) {
     super(...args);
+  }
+  init() {
+    console.log('vvb')
   }
 }
 

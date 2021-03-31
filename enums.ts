@@ -1,26 +1,28 @@
-type PizzaSize = 'small' | 'medium' | 'large';
+type PizzaSize = 'little' | 'medium' | 'large';
 
-/*enum PizzaSize2 {
-  small,
-  medium,
-  large,
+enum PizzaSize2 {
+  small = 's',
+  medium = 'm',
+  large = 'l',
 }
 
-console.log(PizzaSize2);*/
+console.log(PizzaSize2);
 
 
-function cookPizza(size: PizzaSize): string {
+function cookPizza(size: PizzaSize2): string {
   switch (size) {
-    case 'small':
+    case PizzaSize2.small:
       return 'One person pizza';
-    case 'medium':
+    case PizzaSize2.medium:
       return 'Usual pizza';
-    case 'large':
+    case PizzaSize2.large:
       return 'The biggest pizza';
   }
 }
 
-const pizza1 = cookPizza('small');
+const pizza1 = cookPizza(PizzaSize2.large);
 console.log(pizza1);
+
+const array: Array<any> = []
 
 

@@ -7,7 +7,7 @@ interface CoordinateZ {
   z: number;
 }
 
-class Point {
+class Point implements Position2D, CoordinateZ {
   constructor(
     public x: number,
     public y: number,
@@ -16,7 +16,7 @@ class Point {
   }
 }
 
-class PointLocation {
+class PointLocation implements Position2D {
   constructor(
     public x: number,
     public y: number,
@@ -28,8 +28,9 @@ class PointLocation {
 const point = new Point(0, 0, 0);
 const home = new PointLocation(0, 0, 'home');
 
-function print2d(point: Point) {
+function print2d(point: Position2D) {
   console.log(`x: ${point.x}, y: ${point.y}`)
 }
 
 print2d(point);
+print2d(home);
